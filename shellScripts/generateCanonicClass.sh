@@ -54,6 +54,7 @@ END
 #touch ${dir}${class}.cpp
 cat > ${dir}${class}.cpp << END 
 #include "${class}.hpp"
+#include <iostream>
 
 $class::$class( void ){
 
@@ -68,13 +69,13 @@ $class::$class( $class const & src ){
 	return ;
 };
 
-~$class::$class( void ){
+$class::~$class( void ){
 
 	std::cout << "${class} - Destructor called\n";
 	return;
 };
 
-$class	&operator= ( $class const & rhs ){
+$class	&$class::operator= ( $class const & rhs ){
 
 	this-> = ;
 	return *this;
